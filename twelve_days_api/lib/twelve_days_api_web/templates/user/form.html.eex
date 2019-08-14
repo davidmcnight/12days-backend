@@ -5,10 +5,6 @@
     </div>
   <% end %>
 
-  <%= label f, :field %>
-  <%= text_input f, :field %>
-  <%= error_tag f, :field %>
-
   <%= label f, :email %>
   <%= text_input f, :email %>
   <%= error_tag f, :email %>
@@ -21,13 +17,14 @@
   <%= text_input f, :last_name %>
   <%= error_tag f, :last_name %>
 
-  <%= label f, :password_hash %>
-  <%= text_input f, :password_hash %>
-  <%= error_tag f, :password_hash %>
+ <%= label f, :password %>
+  <%= password_input f, :password %>
+  <%= error_tag f, :password %>
 
-  <%= label f, :latest_activity %>
-  <%= datetime_select f, :latest_activity %>
-  <%= error_tag f, :latest_activity %>
+  <%= label f, :password_confirmation %>
+  <%= password_input f, :password_confirmation %>
+  <%= error_tag f, :password_confirmation %>
+  
 
   <div>
     <%= submit "Save" %>

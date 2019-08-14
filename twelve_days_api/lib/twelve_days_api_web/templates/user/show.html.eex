@@ -3,11 +3,6 @@
 <ul>
 
   <li>
-    <strong>Field:</strong>
-    <%= @user.field %>
-  </li>
-
-  <li>
     <strong>Email:</strong>
     <%= @user.email %>
   </li>
@@ -20,16 +15,6 @@
   <li>
     <strong>Last name:</strong>
     <%= @user.last_name %>
-  </li>
-
-  <li>
-    <strong>Password hash:</strong>
-    <%= @user.password_hash %>
-  </li>
-
-  <li>
-    <strong>Latest activity:</strong>
-    <%= @user.latest_activity %>
   </li>
 
 </ul>

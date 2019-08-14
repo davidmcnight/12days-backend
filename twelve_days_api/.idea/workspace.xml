@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8ee57c64-968e-4d99-aa9a-3a6da0c78115" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.elixir_ls/build/test/lib/twelve_days_api/.mix/compile.elixir" beforeDir="false" afterPath="$PROJECT_DIR$/.elixir_ls/build/test/lib/twelve_days_api/.mix/compile.elixir" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.elixir_ls/build/test/lib/twelve_days_api/ebin/Elixir.TwelveDaysApi.Users.User.beam" beforeDir="false" afterPath="$PROJECT_DIR$/.elixir_ls/build/test/lib/twelve_days_api/ebin/Elixir.TwelveDaysApi.Users.User.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.elixir_ls/build/test/lib/twelve_days_api/ebin/Elixir.TwelveDaysApi.Users.beam" beforeDir="false" afterPath="$PROJECT_DIR$/.elixir_ls/build/test/lib/twelve_days_api/ebin/Elixir.TwelveDaysApi.Users.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.elixir_ls/build/test/lib/twelve_days_api/ebin/Elixir.TwelveDaysApiWeb.Router.Helpers.beam" beforeDir="false" afterPath="$PROJECT_DIR$/.elixir_ls/build/test/lib/twelve_days_api/ebin/Elixir.TwelveDaysApiWeb.Router.Helpers.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.elixir_ls/build/test/lib/twelve_days_api/ebin/Elixir.TwelveDaysApiWeb.Router.beam" beforeDir="false" afterPath="$PROJECT_DIR$/.elixir_ls/build/test/lib/twelve_days_api/ebin/Elixir.TwelveDaysApiWeb.Router.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.elixir_ls/build/test/lib/twelve_days_api/ebin/Elixir.TwelveDaysApiWeb.UserController.beam" beforeDir="false" afterPath="$PROJECT_DIR$/.elixir_ls/build/test/lib/twelve_days_api/ebin/Elixir.TwelveDaysApiWeb.UserController.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.elixir_ls/build/test/lib/twelve_days_api/ebin/Elixir.TwelveDaysApiWeb.UserView.beam" beforeDir="false" afterPath="$PROJECT_DIR$/.elixir_ls/build/test/lib/twelve_days_api/ebin/Elixir.TwelveDaysApiWeb.UserView.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.elixir_ls/dialyzer_manifest_22.0.7_elixir-1.9.1_test" beforeDir="false" afterPath="$PROJECT_DIR$/.elixir_ls/dialyzer_manifest_22.0.7_elixir-1.9.1_test" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.elixir_ls/dialyzer_tmp/.elixir_ls/build/test/lib/twelve_days_api/ebin/Elixir.TwelveDaysApi.Users.User.beam" beforeDir="false" afterPath="$PROJECT_DIR$/.elixir_ls/dialyzer_tmp/.elixir_ls/build/test/lib/twelve_days_api/ebin/Elixir.TwelveDaysApi.Users.User.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.elixir_ls/dialyzer_tmp/.elixir_ls/build/test/lib/twelve_days_api/ebin/Elixir.TwelveDaysApi.Users.beam" beforeDir="false" afterPath="$PROJECT_DIR$/.elixir_ls/dialyzer_tmp/.elixir_ls/build/test/lib/twelve_days_api/ebin/Elixir.TwelveDaysApi.Users.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.elixir_ls/dialyzer_tmp/.elixir_ls/build/test/lib/twelve_days_api/ebin/Elixir.TwelveDaysApiWeb.Router.Helpers.beam" beforeDir="false" afterPath="$PROJECT_DIR$/.elixir_ls/dialyzer_tmp/.elixir_ls/build/test/lib/twelve_days_api/ebin/Elixir.TwelveDaysApiWeb.Router.Helpers.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.elixir_ls/dialyzer_tmp/.elixir_ls/build/test/lib/twelve_days_api/ebin/Elixir.TwelveDaysApiWeb.Router.beam" beforeDir="false" afterPath="$PROJECT_DIR$/.elixir_ls/dialyzer_tmp/.elixir_ls/build/test/lib/twelve_days_api/ebin/Elixir.TwelveDaysApiWeb.Router.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.elixir_ls/dialyzer_tmp/.elixir_ls/build/test/lib/twelve_days_api/ebin/Elixir.TwelveDaysApiWeb.UserController.beam" beforeDir="false" afterPath="$PROJECT_DIR$/.elixir_ls/dialyzer_tmp/.elixir_ls/build/test/lib/twelve_days_api/ebin/Elixir.TwelveDaysApiWeb.UserController.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.elixir_ls/dialyzer_tmp/.elixir_ls/build/test/lib/twelve_days_api/ebin/Elixir.TwelveDaysApiWeb.UserView.beam" beforeDir="false" afterPath="$PROJECT_DIR$/.elixir_ls/dialyzer_tmp/.elixir_ls/build/test/lib/twelve_days_api/ebin/Elixir.TwelveDaysApiWeb.UserView.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/twelve_days_api/users/user.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/twelve_days_api/users/user.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/twelve_days_api_web/router.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/twelve_days_api_web/router.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/twelve_days_api_web/templates/user/form.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/twelve_days_api_web/templates/user/form.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/twelve_days_api_web/templates/user/show.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/twelve_days_api_web/templates/user/show.html.eex" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1PQg0XXFXjSeLyCBXdaVeE5W5za" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8ee57c64-968e-4d99-aa9a-3a6da0c78115" name="Default Changelist" comment="" />
+      <created>1565811511657</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1565811511657</updated>
+      <workItem from="1565811512970" duration="13000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
