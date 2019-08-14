@@ -7,7 +7,7 @@
                         'Elixir.TwelveDaysApi.Application',
                         'Elixir.TwelveDaysApi.DataCase',
                         'Elixir.TwelveDaysApi.Repo',
-                        'Elixir.TwelveDaysApi.Users.User',
+                        'Elixir.TwelveDaysApi.Schema',
                         'Elixir.TwelveDaysApiWeb',
                         'Elixir.TwelveDaysApiWeb.ChannelCase',
                         'Elixir.TwelveDaysApiWeb.ConnCase',

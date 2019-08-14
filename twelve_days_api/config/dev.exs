@@ -8,6 +8,7 @@ config :twelve_days_api, TwelveDaysApi.Repo,
   hostname: "localhost",
   port: 5435,
   show_sensitive_data_on_connection_error: true,
+  migration_primary_key: [name: :id, type: :binary_id],
   pool_size: 10
 
 # For development, we disable any cache and enable
