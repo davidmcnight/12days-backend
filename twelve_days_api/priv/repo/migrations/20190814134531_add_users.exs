@@ -8,5 +8,7 @@ defmodule TwelveDaysApi.Repo.Migrations.AddUsers do
       add :password_hash, :string
       timestamps()
     end
+    create unique_index(:users, [:email])
+
   end
 end
