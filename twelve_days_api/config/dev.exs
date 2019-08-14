@@ -3,9 +3,10 @@ use Mix.Config
 # Configure your database
 config :twelve_days_api, TwelveDaysApi.Repo,
   username: "postgres",
-  password: "",
+  password: "mix",
   database: "twelve_days_api_dev",
   hostname: "localhost",
+  port: 5435,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 
