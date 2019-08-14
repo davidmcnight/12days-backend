@@ -9,6 +9,7 @@
                         'Elixir.TwelveDaysApi.DataCase',
                         'Elixir.TwelveDaysApi.Repo',
                         'Elixir.TwelveDaysApi.Schema',
+                        'Elixir.TwelveDaysApi.Users',
                         'Elixir.TwelveDaysApi.Users.User',
                         'Elixir.TwelveDaysApiWeb',
                         'Elixir.TwelveDaysApiWeb.ChannelCase',
@@ -22,7 +23,9 @@
                         'Elixir.TwelveDaysApiWeb.PageView',
                         'Elixir.TwelveDaysApiWeb.Router',
                         'Elixir.TwelveDaysApiWeb.Router.Helpers',
-                        'Elixir.TwelveDaysApiWeb.UserSocket']},
+                        'Elixir.TwelveDaysApiWeb.UserController',
+                        'Elixir.TwelveDaysApiWeb.UserSocket',
+                        'Elixir.TwelveDaysApiWeb.UserView']},
               {registered,[]},
               {vsn,"0.1.0"},
               {mod,{'Elixir.TwelveDaysApi.Application',[]}}]}.

@@ -16,7 +16,7 @@ defmodule TwelveDaysApiWeb.Router do
   scope "/", TwelveDaysApiWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    get "/user", UserController, :index
   end
 
   # Other scopes may use custom stacks.
