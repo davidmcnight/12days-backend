@@ -10,16 +10,23 @@ defmodule TwelveDaysApiWeb.SessionController do
 
   def create(conn, %{"session" => %{"email" => email, "password" => password}}) do
     user = Users.get_user_by_email!(email)
-    case Users.verify_password(user, password) do
-    :ok ->
-      conn
-      |> put_session(:current_user_id, user.id)
-      |> put_flash(:info, "Signed in successfully.")
-      |> redirect(to: Routes.user_path(conn, :index))
-    {:error, _} ->
-      conn
-      |> put_flash(:error, "There was a problem with your username/password")
-      |> render("new.html")
+    cond do
+      user ->
+        case Users.verify_password(user, password) do
+        :ok ->
+          conn
+          |> put_session(:current_user_id, user.id)
+          |> put_flash(:info, "Signed in successfully.")
+          |> redirect(to: Routes.user_path(conn, :index))
+        {:error, _} ->
+          conn
+          |> put_flash(:error, "There was a problem with your password")
+          |> render("new.html")
+        end
+      true ->
+        conn
+        |> put_flash(:error, "There was a problem with your username")
+        |> render("new.html")
     end
   end
 
