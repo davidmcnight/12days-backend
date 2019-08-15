@@ -3,26 +3,20 @@
 <table>
   <thead>
     <tr>
-      <th>Field</th>
+  
       <th>Email</th>
       <th>First name</th>
       <th>Last name</th>
-      <th>Password hash</th>
-      <th>Latest activity</th>
-
       <th></th>
     </tr>
   </thead>
   <tbody>
 <%= for user <- @users do %>
     <tr>
-      <td><%= user.field %></td>
+     
       <td><%= user.email %></td>
       <td><%= user.first_name %></td>
       <td><%= user.last_name %></td>
-      <td><%= user.password_hash %></td>
-      <td><%= user.latest_activity %></td>
-
       <td>
         <%= link "Show", to: Routes.user_path(@conn, :show, user) %>
         <%= link "Edit", to: Routes.user_path(@conn, :edit, user) %>

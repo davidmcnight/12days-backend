@@ -15,7 +15,8 @@ defmodule TwelveDaysApiWeb.Router do
 
   scope "/", TwelveDaysApiWeb do
     pipe_through :browser
-
+    get "/", PageController, :index
+    get "/registration", UserController, :new
     resources "/users", UserController
   end
 
