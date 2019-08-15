@@ -14,10 +14,14 @@
       <section class="container">
         <nav role="navigation">
           <ul>
-            <li><a href="https://hexdocs.pm/phoenix/overview.html">Get Started</a></li>
+             <%= if signed_in?(@conn) do %>
+              <li><a href="/logout">Logout</a></li>
+               <% else %>
+              <li><a href="/registration">Sign Up</a></li>
+              <% end %>
           </ul>
         </nav>
-        <a href="http://phoenixframework.org/" class="phx-logo">
+        <a href="/" class="phx-logo">
           <img src="<%= Routes.static_path(@conn, "/images/phoenix.png") %>" alt="Phoenix Framework Logo"/>
         </a>
       </section>

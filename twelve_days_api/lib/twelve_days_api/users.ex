@@ -101,4 +101,13 @@ defmodule TwelveDaysApi.Users do
   def change_user(%User{} = user) do
     User.changeset(user, %{})
   end
+
+
+  def signed_in?(conn) do
+    user_id = Plug.Conn.get_session(conn, :current_user_id)
+    if user_id, do: !! Repo.get(User, user_id)
+  end
+
+
+
 end

@@ -15,11 +15,18 @@ defmodule TwelveDaysApiWeb.UserController do
   end
 
   def create(conn, %{"user" => user_params}) do
+
     case Users.create_user(user_params) do
       {:ok, user} ->
         conn
+        |> put_session(:current_user_id, user.id)
+        |> put_session(:admin, user.admin)
         |> put_flash(:info, "User created successfully.")
         |> redirect(to: Routes.user_path(conn, :show, user))
+
+
+
+        # |> redirect(to: Routes.user_path(conn, :show, user))
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
@@ -27,6 +34,9 @@ defmodule TwelveDaysApiWeb.UserController do
   end
 
   def show(conn, %{"id" => id}) do
+    conn = put_session(conn, :message, "new stuff we just set in the session")
+    message = get_session(conn, :message)
+    IO.inspect(get_session(conn))
     user = Users.get_user!(id)
     render(conn, "show.html", user: user)
   end

@@ -21,6 +21,7 @@ defmodule TwelveDaysApi.Users.User do
     field :last_name, :string
     field :password_hash, :string
     field :latest_activity, :naive_datetime
+    field :admin, :boolean, default: false
     field :password, :string, virtual: true
     field :password_confirmation, :string, virtual: true
 
