@@ -106,4 +106,16 @@ defmodule TwelveDaysApi.Users do
     user_id = Plug.Conn.get_session(conn, :current_user_id)
     if user_id, do: !! Repo.get(User, user_id)
   end
+
+  def get_user_by_email!(email) do
+    from(u in User, where: u.email == ^email)
+    |> Repo.one()
+  end
+
+  def verify_password(%User{password_hash: password_hash}, password) do
+    cond do
+      Bcrypt.verify_pass(password, password_hash) -> :ok
+      true -> {:error, :unauthorized}
+    end
+  end
 end
