@@ -107,9 +107,9 @@ defmodule TwelveDaysApi.Users do
     if user_id, do: !! Repo.get(User, user_id)
   end
 
-  def get_user_by_email_and_verify_password(email, password) do
+  # def get_user_by_email_and_verify_password(email, password) do
 
-  end
+  # end
 
   def get_user_by_email!(email) do
     from(u in User, where: u.email == ^email)
