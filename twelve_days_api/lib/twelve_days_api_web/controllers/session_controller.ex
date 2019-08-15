@@ -1,14 +1,16 @@
-defmodule TwelveDaysApiWeb.Session do
+defmodule TwelveDaysApiWeb.SessionController do
+  use TwelveDaysApiWeb, :controller
+
+  # def create(conn, %{"user" => user_params}) do
 
 
-  def create(conn, %{"user" => user_params}) do
+  # end
 
-
-  end
-
-  def delete(conn, %{"id" => id}) do
+  def delete(conn, _) do
     conn
-    |> clear_session
+    |> configure_session(drop: true)
+    |> put_flash(:info, "Signed out successfully.")
+    |> redirect(to: Routes.page_path(conn, :index))
   end
 end
 

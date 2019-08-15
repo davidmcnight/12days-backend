@@ -17,6 +17,9 @@ defmodule TwelveDaysApiWeb.Router do
     pipe_through :browser
     get "/", PageController, :index
     get "/registration", UserController, :new
+
+    get "/logout", SessionController, :delete
+
     resources "/users", UserController
   end
 
