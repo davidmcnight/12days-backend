@@ -18,11 +18,12 @@
               <li><a href="/logout">Logout</a></li>
                <% else %>
               <li><a href="/registration">Sign Up</a></li>
+              <li><a href="/login">Login</a></li>
               <% end %>
           </ul>
         </nav>
         <a href="/" class="phx-logo">
-          <img src="<%= Routes.static_path(@conn, "/images/phoenix.png") %>" alt="Phoenix Framework Logo"/>
+          Home
         </a>
       </section>
     </header>
