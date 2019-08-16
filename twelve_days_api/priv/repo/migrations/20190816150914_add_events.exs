@@ -42,10 +42,5 @@ defmodule TwelveDaysApi.Repo.Migrations.AddEvents do
       add :notification_id, references(:notifications, on_delete: :delete_all, null: false)
       add :notification_type_id, references(:notification_types)
     end
-
-    create table(:notification_log) do
-      add :notification_id
-      add :sent, :naive_datetime
-    end
   end
 end
