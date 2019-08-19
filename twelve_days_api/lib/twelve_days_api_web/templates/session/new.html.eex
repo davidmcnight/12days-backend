@@ -1,6 +1,23 @@
+<<<<<<< HEAD
 <h1>Sign in</h1>
 <%= form_for @conn, Routes.session_path(@conn, :create), [as: :session], fn f -> %>
   <%= text_input f, :email, placeholder: "email" %>
   <%= password_input f, :password, placeholder: "password" %>
   <%= submit "Sign in" %>
 <% end %>
+=======
+<div class="page-container">
+  <div class="signin-container">
+    <h1>Sign in</h1>
+    <%= form_for @conn, Routes.session_path(@conn, :create), [as: :session], fn f -> %>
+      <%= text_input f, :email, placeholder: "email" %>
+      <%= password_input f, :password, placeholder: "password" %>
+      <%= submit "Sign in" %>
+    <% end %>
+  </div>
+
+  <p>Don't have an account yet? <a href="/registration">Sign Up Here</a></p>
+
+  <span><%= link "Back", to: Routes.page_path(@conn, :index) %></span>
+</div>
+>>>>>>> e90f48a5178f2db4150c6556d98bb9d448aa10cb

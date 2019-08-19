@@ -1,0 +1,43 @@
+<h1>Show Event occurrence</h1>
+
+<ul>
+
+  <li>
+    <strong>Start date:</strong>
+    <%= @event_occurrence.start_date %>
+  </li>
+
+  <li>
+    <strong>End date:</strong>
+    <%= @event_occurrence.end_date %>
+  </li>
+
+  <li>
+    <strong>Increment:</strong>
+    <%= @event_occurrence.increment %>
+  </li>
+
+  <li>
+    <strong>Increment type:</strong>
+    <%= @event_occurrence.increment_type %>
+  </li>
+
+  <li>
+    <strong>Interval:</strong>
+    <%= @event_occurrence.interval %>
+  </li>
+
+  <li>
+    <strong>Days of week:</strong>
+    <%= @event_occurrence.days_of_week %>
+  </li>
+
+  <li>
+    <strong>Months of year:</strong>
+    <%= @event_occurrence.months_of_year %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.event_occurrence_path(@conn, :edit, @event_occurrence) %></span>
+<span><%= link "Back", to: Routes.event_occurrence_path(@conn, :index) %></span>

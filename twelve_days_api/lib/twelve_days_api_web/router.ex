@@ -16,12 +16,24 @@ defmodule TwelveDaysApiWeb.Router do
   scope "/", TwelveDaysApiWeb do
     pipe_through :browser
     get "/", PageController, :index
+
+    # auth
     get "/registration", UserController, :new
-    get "/logout", SessionController, :delete
     get "/login", SessionController, :new
+    get "/logout", SessionController, :delete
     post "/auth", SessionController, :create
-    resources "/users", UserController
-  end
+
+    # resources "/users", UserController
+    resources "/events", EventController
+    resources "/event_occurrences", EventOccurrenceController
+    end
+
+    scope "/api", TwelveDaysApiWeb do
+      pipe_through :api
+      resources "/users", UserController, only: [:index]
+
+    end
+
 
   # Other scopes may use custom stacks.
   # scope "/api", TwelveDaysApiWeb do
