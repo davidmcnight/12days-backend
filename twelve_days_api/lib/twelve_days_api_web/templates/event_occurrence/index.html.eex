@@ -1,0 +1,38 @@
+<h1>Listing Event occurrences</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Start date</th>
+      <th>End date</th>
+      <th>Increment</th>
+      <th>Increment type</th>
+      <th>Interval</th>
+      <th>Days of week</th>
+      <th>Months of year</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for event_occurrence <- @event_occurrences do %>
+    <tr>
+      <td><%= event_occurrence.start_date %></td>
+      <td><%= event_occurrence.end_date %></td>
+      <td><%= event_occurrence.increment %></td>
+      <td><%= event_occurrence.increment_type %></td>
+      <td><%= event_occurrence.interval %></td>
+      <td><%= event_occurrence.days_of_week %></td>
+      <td><%= event_occurrence.months_of_year %></td>
+
+      <td>
+        <%= link "Show", to: Routes.event_occurrence_path(@conn, :show, event_occurrence) %>
+        <%= link "Edit", to: Routes.event_occurrence_path(@conn, :edit, event_occurrence) %>
+        <%= link "Delete", to: Routes.event_occurrence_path(@conn, :delete, event_occurrence), method: :delete, data: [confirm: "Are you sure?"] %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Event occurrence", to: Routes.event_occurrence_path(@conn, :new) %></span>
