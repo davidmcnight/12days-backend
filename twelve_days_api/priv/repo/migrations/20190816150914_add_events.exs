@@ -11,7 +11,7 @@ defmodule TwelveDaysApi.Repo.Migrations.AddEvents do
       add :all_day, :boolean, default: false
       timestamps()
     end
-    create index(:events, [:created_by_id])
+    create index(:events, [:creator_id])
 
     create table(:event_occurrences) do
       add :event_id, references(:events, on_delete: :delete_all, null: false)
