@@ -1,7 +1,9 @@
-<section class="phx-hero">
-  <h1><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h1>
-  <p>A productive web framework that<br/>does not compromise speed or maintainability.</p>
-</section>
-
-
-<div id='calendar'></div>
+<div class="page-container">
+  <section class="phx-hero">
+    <h1><%= gettext "Welcome to %{name}!", name: "12 Days of Forgetfulness" %></h1>
+    <a href="/" class="phx-logo">
+      <img src="<%= Routes.static_path(@conn, "/images/DoNotForget.png") %>" alt="Phoenix Framework Logo"/>
+    </a>
+  </section>
+  <div id='calendar'></div>
+</div>

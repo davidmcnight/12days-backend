@@ -79,10 +79,27 @@ select {
   min-width: 300px;
   margin: 1rem;
   display: block;
+  color: black;
 }
 .phx-logo img {
   width: auto;
   display: block;
+}
+
+.signin-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border: .5px solid gray;
+  border-radius: 6px;
+  padding: 16px;
+  max-width: 400px;
+}
+
+.page-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 /* Headers */
