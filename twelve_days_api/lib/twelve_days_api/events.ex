@@ -7,6 +7,7 @@ defmodule TwelveDaysApi.Events do
   alias TwelveDaysApi.Repo
 
   alias TwelveDaysApi.Events.Event
+  alias TwelveDaysApi.Events.EventOccurrence
 
   @doc """
   Returns the list of events.

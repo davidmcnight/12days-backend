@@ -3,11 +3,13 @@ defmodule TwelveDaysApi.Events.Event do
   import Ecto.Changeset
 
   schema "events" do
-    field :all_day, :boolean, default: false
-    field :end_time, :naive_datetime
     field :event_name, :string
-    field :send_ecard, :boolean, default: false
     field :start_time, :naive_datetime
+    field :end_time, :naive_datetime
+    field :send_ecard, :boolean, default: false
+    field :all_day, :boolean, default: false
+
+    has_one :event_occurrence, TwelveDaysApi.Events.EventOccurrence
 
     timestamps()
   end

@@ -3,13 +3,15 @@ defmodule TwelveDaysApi.Events.EventOccurrence do
   import Ecto.Changeset
 
   schema "event_occurrences" do
-    field :days_of_week, :string
+    field :start_date, :date
     field :end_date, :date
     field :increment, :integer
     field :increment_type, :string
     field :interval, :integer
+    field :days_of_week, :string
     field :months_of_year, :string
-    field :start_date, :date
+
+    belongs_to :event, TwelveDaysApi.Events.Event
 
     timestamps()
   end
