@@ -16,19 +16,13 @@
           <ul>
             <%= if signed_in?(@conn) do %>
               <li><a href="/logout">Logout</a></li>
-
-               <% else %>
-              <li><a href="/registration">Sign Up</a></li>
-              <li><a href="/login">Login</a></li>
-              <% end %>
+            <% else %>
+              <li><a href="/login">Sign In</a></li>
+            <% end %>
           </ul>
         </nav>
         <a href="/" class="phx-logo">
-          Home
-        </nav>
-        <a href="/" class="phx-logo">
           <h1>The Remembering Safe Place</h1>
-
         </a>
       </section>
     </header>

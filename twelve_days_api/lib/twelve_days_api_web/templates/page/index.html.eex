@@ -5,6 +5,7 @@
       <img src="<%= Routes.static_path(@conn, "/images/DoNotForget.png") %>" alt="Phoenix Framework Logo"/>
     </a>
   </section>
+<<<<<<< HEAD
 
 
 <div id='calendar'></div>
@@ -29,3 +30,7 @@
   </section>
 </div>
 
+=======
+  <div id='calendar'></div>
+</div>
+>>>>>>> b8fba372316d95c93fc631ba25cda27bf8324681

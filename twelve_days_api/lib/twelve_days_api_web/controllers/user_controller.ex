@@ -5,14 +5,6 @@ defmodule TwelveDaysApiWeb.UserController do
   alias TwelveDaysApi.Users.User
 
 
-  def index(conn, _params) do
-    users = Users.list_users()
-    render(conn, "users.json", users: users)
-    # text conn, "BusiApi!"
-    # render(conn, "index.html", users: users)
-  end
-
-
   def new(conn, _params) do
     changeset = Users.change_user(%User{})
     render(conn, "new.html", changeset: changeset)
