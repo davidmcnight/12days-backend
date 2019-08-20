@@ -4,7 +4,6 @@ defmodule TwelveDaysApiWeb.EventController do
 
   alias TwelveDaysApi.Events
   alias TwelveDaysApi.Events.Event
-  alias TwelveDaysApi.Events.EventOccurrence
 
   def index(conn, _params) do
     events = Events.list_events()
@@ -16,7 +15,10 @@ defmodule TwelveDaysApiWeb.EventController do
     render(conn, "new.html", changeset: changeset)
   end
 
-  def create(conn, %{"event" => event_params}) do
+  def create(conn, %{"event" => event_params}, %{session: session}) do
+    event_params =
+      event_params
+      |> Map.merge(%{"creator_id" => session.member.id})
     case Events.create_event(event_params) do
       {:ok, event} ->
         conn
