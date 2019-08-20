@@ -4,7 +4,6 @@ defmodule TwelveDaysApiWeb.UserController do
   alias TwelveDaysApi.Users
   alias TwelveDaysApi.Users.User
 
-
   def index(conn, _params) do
     user_id = get_session(conn, :current_user_id)
     if(user_id) do
@@ -34,8 +33,6 @@ defmodule TwelveDaysApiWeb.UserController do
         render(conn, "new.html", changeset: changeset)
     end
   end
-
-
 
   def edit(conn, %{"id" => id}) do
     user = Users.get_user!(id)

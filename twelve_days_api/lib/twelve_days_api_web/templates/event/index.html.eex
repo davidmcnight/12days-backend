@@ -8,6 +8,13 @@
       <th>End time</th>
       <th>Send ecard</th>
       <th>All day</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Increment</th>
+      <th>Increment Type</th>
+      <th>Interval</th>
+      <th>Days of the Week</th>
+      <th>Months of the Year</th>
 
       <th></th>
     </tr>
@@ -20,6 +27,13 @@
       <td><%= event.end_time %></td>
       <td><%= event.send_ecard %></td>
       <td><%= event.all_day %></td>
+      <td><%= event.start_date %></td>
+      <td><%= event.end_date %></td>
+      <td><%= event.increment %></td>
+      <td><%= event.increment_type %></td>
+      <td><%= event.interval %></td>
+      <td><%= event.days_of_week %></td>
+      <td><%= event.months_of_year %></td>
 
       <td>
         <%= link "Show", to: Routes.event_path(@conn, :show, event) %>

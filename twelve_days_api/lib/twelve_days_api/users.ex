@@ -108,7 +108,7 @@ defmodule TwelveDaysApi.Users do
   end
 
 
-  def get_user_by_email(email) do
+  def get_user_by_email!(email) do
     from(u in User, where: u.email == ^email)
     |> Repo.one()
   end
@@ -121,7 +121,7 @@ defmodule TwelveDaysApi.Users do
   end
 
   def authenticate_user(email, password) do
-    user = get_user_by_email(email)
+    user = get_user_by_email!(email)
     cond do
       user->verify_password(user, password)
       true->{:error, :not_found}

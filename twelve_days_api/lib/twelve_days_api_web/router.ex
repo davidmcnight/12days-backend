@@ -22,10 +22,11 @@ defmodule TwelveDaysApiWeb.Router do
     get "/login", SessionController, :new
     get "/logout", SessionController, :delete
     post "/auth", SessionController, :create
+
     get "/registration", UserController, :new
     resources "/users", UserController
-    resources "/events", EventController
 
+    resources "/events", EventController
   end
 
 

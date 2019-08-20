@@ -17,5 +17,10 @@
     <%= @user.last_name %>
   </li>
 
+    <li>
+    <strong>ID:</strong>
+    <%= @user.id %>
+  </li>
+
 </ul>
 

@@ -1,5 +1,5 @@
 defmodule TwelveDaysApi.Events.Event do
-  use Ecto.Schema
+  use TwelveDaysApi.Schema
   import Ecto.Changeset
 
   @cast_attrs ~w(
@@ -32,7 +32,7 @@ defmodule TwelveDaysApi.Events.Event do
     field :days_of_week, :string
     field :months_of_year, :string
 
-    belongs_to :user, TwelveDaysApi.Users.User, [foreign_key: :creator_id]
+    belongs_to :creator, TwelveDaysApi.Users.User
 
     timestamps()
   end

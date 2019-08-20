@@ -1,7 +1,12 @@
 defmodule TwelveDaysApiWeb.SessionController do
   use TwelveDaysApiWeb, :controller
+
   alias TwelveDaysApi.Users
   alias TwelveDaysApi.Users.User
+
+  def new(conn, _params) do
+    render(conn, "new.html")
+  end
 
   def create(conn, %{"session" => %{"email" => email, "password" => password}}) do
     with {:ok, %User{} = user} <- Users.authenticate_user(email, password) do
@@ -29,12 +34,6 @@ defmodule TwelveDaysApiWeb.SessionController do
   end
 
 
-
-  def new(conn, _params) do
-    render(conn, "new.html")
-  end
-
-
   def delete(conn, _) do
     conn
     |> clear_session()
@@ -43,4 +42,5 @@ defmodule TwelveDaysApiWeb.SessionController do
     |> redirect(to: Routes.page_path(conn, :index))
   end
 end
+
 
