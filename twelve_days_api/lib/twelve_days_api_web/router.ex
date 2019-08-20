@@ -17,11 +17,14 @@ defmodule TwelveDaysApiWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+
     # auth
     get "/login", SessionController, :new
-    get "/registration", UserController, :new
     get "/logout", SessionController, :delete
     post "/auth", SessionController, :create
+
+    get "/registration", UserController, :new
+    resources "/users", UserController, only: [:index, :show]
 
   end
 
@@ -29,7 +32,6 @@ defmodule TwelveDaysApiWeb.Router do
   scope "/api", TwelveDaysApiWeb do
     pipe_through :api
     resources "/users", Api.UserController, only: [:index, :show]
-
   end
 
 

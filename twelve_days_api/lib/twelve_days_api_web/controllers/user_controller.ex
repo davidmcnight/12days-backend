@@ -5,6 +5,11 @@ defmodule TwelveDaysApiWeb.UserController do
   alias TwelveDaysApi.Users.User
 
 
+  def index(conn, _params) do
+    users = Users.list_users()
+    render(conn, "index.html", users: users)
+  end
+
   def new(conn, _params) do
     changeset = Users.change_user(%User{})
     render(conn, "new.html", changeset: changeset)
@@ -30,6 +35,7 @@ defmodule TwelveDaysApiWeb.UserController do
     user = Users.get_user!(id)
     render(conn, "show.html", user: user)
   end
+
 
   def edit(conn, %{"id" => id}) do
     user = Users.get_user!(id)
