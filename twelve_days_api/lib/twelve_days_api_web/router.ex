@@ -24,7 +24,9 @@ defmodule TwelveDaysApiWeb.Router do
     post "/auth", SessionController, :create
 
     get "/registration", UserController, :new
-    resources "/users", UserController, only: [:index, :show]
+    resources "/users", UserController
+
+    resources "/events", EventController
 
   end
 
