@@ -6,7 +6,7 @@ defmodule TwelveDaysApi.Repo.Migrations.AddEvents do
       add :event_name, :string, null: false
       add :start_time, :naive_datetime, null: false
       add :end_time, :naive_datetime
-      add :creator_id, references(:users, on_delete: :delete_all, null: false)
+      add :creator_id, references(:users, on_delete: :delete_all)
       add :send_ecard, :boolean, default: false
       add :all_day, :boolean, default: false
       add :start_date, :date

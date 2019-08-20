@@ -1,24 +1,27 @@
-require IEx
 defmodule TwelveDaysApiWeb.EventController do
   use TwelveDaysApiWeb, :controller
 
   alias TwelveDaysApi.Events
   alias TwelveDaysApi.Events.Event
+  alias TwelveDaysApi.Users
 
-  def index(conn, _params) do
+  def index(conn, _params, _assigns) do
     events = Events.list_events()
     render(conn, "index.html", events: events)
   end
 
-  def new(conn, _params) do
+  def new(conn, _params, _assigns) do
+    current_user_id = get_session(conn, :current_user_id)
+    IO.puts current_user_id
     changeset = Events.change_event(%Event{})
     render(conn, "new.html", changeset: changeset)
   end
 
-  def create(conn, %{"event" => event_params}, %{session: session}) do
+  def create(conn, %{"event" => event_params}, _assigns) do
+    # current_user_id = get_session(conn, :current_user_id)
     event_params =
       event_params
-      |> Map.merge(%{"creator_id" => session.member.id})
+      |> Map.merge(%{"creator_id" => get_session(conn, :current_user_id)})
     case Events.create_event(event_params) do
       {:ok, event} ->
         conn
@@ -62,5 +65,10 @@ defmodule TwelveDaysApiWeb.EventController do
     conn
     |> put_flash(:info, "Event deleted successfully.")
     |> redirect(to: Routes.event_path(conn, :index))
+  end
+
+  def action(conn, _) do
+    args = [conn, conn.params, conn.assigns]
+    apply(__MODULE__, action_name(conn), args)
   end
 end

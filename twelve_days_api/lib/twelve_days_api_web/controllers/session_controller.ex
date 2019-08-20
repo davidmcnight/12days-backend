@@ -2,7 +2,6 @@ defmodule TwelveDaysApiWeb.SessionController do
   use TwelveDaysApiWeb, :controller
 
   alias TwelveDaysApi.Users
-  alias TwelveDaysApi.Users.User
 
   def new(conn, _params) do
     render(conn, "new.html")

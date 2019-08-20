@@ -17,6 +17,11 @@
     <%= @user.last_name %>
   </li>
 
+    <li>
+    <strong>ID:</strong>
+    <%= @user.id %>
+  </li>
+
 </ul>
 
 <span><%= link "Edit", to: Routes.user_path(@conn, :edit, @user) %></span>
