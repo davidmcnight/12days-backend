@@ -27,6 +27,41 @@
     <%= @event.all_day %>
   </li>
 
+  <li>
+    <strong>Start Date:</strong>
+    <%= @event.start_date %>
+  </li>
+
+  <li>
+    <strong>End Date:</strong>
+    <%= @event.end_date %>
+  </li>
+
+  <li>
+    <strong>increment:</strong>
+    <%= @event.increment %>
+  </li>
+
+  <li>
+    <strong>Increment Type:</strong>
+    <%= @event.increment_type %>
+  </li>
+
+  <li>
+    <strong>Interval:</strong>
+    <%= @event.interval %>
+  </li>
+
+  <li>
+    <strong>Day of the week:</strong>
+    <%= @event.days_of_week %>
+  </li>
+
+  <li>
+    <strong>Month of the Year:</strong>
+    <%= @event.months_of_year %>
+  </li>
+
 </ul>
 
 <span><%= link "Edit", to: Routes.event_path(@conn, :edit, @event) %></span>

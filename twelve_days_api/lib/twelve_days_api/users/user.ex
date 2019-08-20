@@ -13,7 +13,14 @@ defmodule TwelveDaysApi.Users.User do
   )a
 
   # @filtered_attrs
+  @filtered_attrs ~w(
+    password
+    password_confirmation
+    password_hash
+  )a
 
+  @json_attrs @cast_attrs ++ [:id]
+  @derive {Jason.Encoder, only: @json_attrs -- @filtered_attrs}
 
   schema "users" do
     field :email, :string

@@ -3,7 +3,6 @@ defmodule TwelveDaysApiWeb.EventController do
 
   alias TwelveDaysApi.Events
   alias TwelveDaysApi.Events.Event
-  alias TwelveDaysApi.Users
 
   def index(conn, _params, _assigns) do
     events = Events.list_events()

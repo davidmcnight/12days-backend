@@ -107,19 +107,29 @@ defmodule TwelveDaysApi.Users do
     if user_id, do: !! Repo.get(User, user_id)
   end
 
-  # def get_user_by_email_and_verify_password(email, password) do
-
-  # end
 
   def get_user_by_email!(email) do
     from(u in User, where: u.email == ^email)
     |> Repo.one()
   end
 
-  def verify_password(%User{password_hash: password_hash}, password) do
+  def verify_password(%User{password_hash: password_hash} = user, password) do
     cond do
-      Bcrypt.verify_pass(password, password_hash) -> :ok
+      Bcrypt.verify_pass(password, password_hash) -> {:ok, user}
       true -> {:error, :unauthorized}
     end
   end
+
+  def authenticate_user(email, password) do
+    user = get_user_by_email!(email)
+    cond do
+      user->verify_password(user, password)
+      true->{:error, :not_found}
+    end
+#    with{:ok, %{User{} = user} }
+
+
+  end
+
+
 end

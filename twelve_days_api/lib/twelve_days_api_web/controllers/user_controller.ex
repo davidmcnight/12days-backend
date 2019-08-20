@@ -28,12 +28,10 @@ defmodule TwelveDaysApiWeb.UserController do
   end
 
   def show(conn, %{"id" => id}) do
-    conn = put_session(conn, :message, "new stuff we just set in the session")
-    message = get_session(conn, :message)
-    IO.inspect(get_session(conn))
     user = Users.get_user!(id)
     render(conn, "show.html", user: user)
   end
+
 
   def edit(conn, %{"id" => id}) do
     user = Users.get_user!(id)
