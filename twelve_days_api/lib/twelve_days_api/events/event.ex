@@ -3,6 +3,7 @@ defmodule TwelveDaysApi.Events.Event do
   import Ecto.Changeset
 
   @cast_attrs ~w(
+    creator_id
     event_name
     start_time
     end_time
@@ -31,7 +32,7 @@ defmodule TwelveDaysApi.Events.Event do
     field :days_of_week, :string
     field :months_of_year, :string
 
-    belongs_to :user, TwelveDaysApi.Users.User
+    belongs_to :user, TwelveDaysApi.Users.User, [foreign_key: :creator_id]
 
     timestamps()
   end
@@ -40,7 +41,6 @@ defmodule TwelveDaysApi.Events.Event do
   def changeset(event, attrs) do
     event
     |> cast(attrs, @cast_attrs)
-    |> cast_assoc(:event_occurrence)
     |> validate_required([:event_name, :start_time, :end_time, :send_ecard, :all_day])
   end
 end

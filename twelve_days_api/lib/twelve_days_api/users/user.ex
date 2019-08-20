@@ -25,6 +25,8 @@ defmodule TwelveDaysApi.Users.User do
     field :password, :string, virtual: true
     field :password_confirmation, :string, virtual: true
 
+    has_many :events, TwelveDaysApi.Events.Event, [foreign_key: :creator_id]
+
     timestamps()
   end
 

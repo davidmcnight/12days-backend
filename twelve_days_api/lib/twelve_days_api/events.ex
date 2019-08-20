@@ -6,8 +6,9 @@ defmodule TwelveDaysApi.Events do
   import Ecto.Query, warn: false
   alias TwelveDaysApi.Repo
 
+  alias TwelveDaysApi.Events
   alias TwelveDaysApi.Events.Event
-  alias TwelveDaysApi.Events.EventOccurrence
+  alias TwelveDaysApi.Users.User
 
   @doc """
   Returns the list of events.
