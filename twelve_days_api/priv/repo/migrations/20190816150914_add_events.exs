@@ -9,13 +9,7 @@ defmodule TwelveDaysApi.Repo.Migrations.AddEvents do
       add :creator_id, references(:users, on_delete: :delete_all, null: false)
       add :send_ecard, :boolean, default: false
       add :all_day, :boolean, default: false
-      timestamps()
-    end
-    create index(:events, [:creator_id])
-
-    create table(:event_occurrences) do
-      add :event_id, references(:events, on_delete: :delete_all, null: false)
-      add :start_date, :date, null: false
+      add :start_date, :date
       add :end_date, :date
       add :increment, :integer
       add :increment_type, :string
@@ -24,14 +18,6 @@ defmodule TwelveDaysApi.Repo.Migrations.AddEvents do
       add :months_of_year, :string
       timestamps()
     end
-
-    create table(:notifications) do
-      add :event_id, references(:events, on_delete: :delete_all, null: false)
-      add :message, :string
-      add :interval_type, :string
-      add :amount, :integer
-      add :last_sent, :naive_datetime
-      timestamps()
-    end
+    create index(:events, [:creator_id])
   end
 end

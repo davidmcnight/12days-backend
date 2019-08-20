@@ -6,8 +6,9 @@ defmodule TwelveDaysApi.Events do
   import Ecto.Query, warn: false
   alias TwelveDaysApi.Repo
 
+  alias TwelveDaysApi.Events
   alias TwelveDaysApi.Events.Event
-  alias TwelveDaysApi.Events.EventOccurrence
+  alias TwelveDaysApi.Users.User
 
   @doc """
   Returns the list of events.
@@ -101,101 +102,5 @@ defmodule TwelveDaysApi.Events do
   """
   def change_event(%Event{} = event) do
     Event.changeset(event, %{})
-  end
-
-  alias TwelveDaysApi.Events.EventOccurrence
-
-  @doc """
-  Returns the list of event_occurrences.
-
-  ## Examples
-
-      iex> list_event_occurrences()
-      [%EventOccurrence{}, ...]
-
-  """
-  def list_event_occurrences do
-    Repo.all(EventOccurrence)
-  end
-
-  @doc """
-  Gets a single event_occurrence.
-
-  Raises `Ecto.NoResultsError` if the Event occurrence does not exist.
-
-  ## Examples
-
-      iex> get_event_occurrence!(123)
-      %EventOccurrence{}
-
-      iex> get_event_occurrence!(456)
-      ** (Ecto.NoResultsError)
-
-  """
-  def get_event_occurrence!(id), do: Repo.get!(EventOccurrence, id)
-
-  @doc """
-  Creates a event_occurrence.
-
-  ## Examples
-
-      iex> create_event_occurrence(%{field: value})
-      {:ok, %EventOccurrence{}}
-
-      iex> create_event_occurrence(%{field: bad_value})
-      {:error, %Ecto.Changeset{}}
-
-  """
-  def create_event_occurrence(attrs \\ %{}) do
-    %EventOccurrence{}
-    |> EventOccurrence.changeset(attrs)
-    |> Repo.insert()
-  end
-
-  @doc """
-  Updates a event_occurrence.
-
-  ## Examples
-
-      iex> update_event_occurrence(event_occurrence, %{field: new_value})
-      {:ok, %EventOccurrence{}}
-
-      iex> update_event_occurrence(event_occurrence, %{field: bad_value})
-      {:error, %Ecto.Changeset{}}
-
-  """
-  def update_event_occurrence(%EventOccurrence{} = event_occurrence, attrs) do
-    event_occurrence
-    |> EventOccurrence.changeset(attrs)
-    |> Repo.update()
-  end
-
-  @doc """
-  Deletes a EventOccurrence.
-
-  ## Examples
-
-      iex> delete_event_occurrence(event_occurrence)
-      {:ok, %EventOccurrence{}}
-
-      iex> delete_event_occurrence(event_occurrence)
-      {:error, %Ecto.Changeset{}}
-
-  """
-  def delete_event_occurrence(%EventOccurrence{} = event_occurrence) do
-    Repo.delete(event_occurrence)
-  end
-
-  @doc """
-  Returns an `%Ecto.Changeset{}` for tracking event_occurrence changes.
-
-  ## Examples
-
-      iex> change_event_occurrence(event_occurrence)
-      %Ecto.Changeset{source: %EventOccurrence{}}
-
-  """
-  def change_event_occurrence(%EventOccurrence{} = event_occurrence) do
-    EventOccurrence.changeset(event_occurrence, %{})
   end
 end

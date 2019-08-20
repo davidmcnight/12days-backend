@@ -1,5 +1,0 @@
-<h1>Edit Event occurrence</h1>
-
-<%= render "form.html", Map.put(assigns, :action, Routes.event_occurrence_path(@conn, :update, @event_occurrence)) %>
-
-<span><%= link "Back", to: Routes.event_occurrence_path(@conn, :index) %></span>

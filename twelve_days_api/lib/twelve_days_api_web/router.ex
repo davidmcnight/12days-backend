@@ -25,9 +25,11 @@ defmodule TwelveDaysApiWeb.Router do
 
   end
 
+
   scope "/api", TwelveDaysApiWeb do
     pipe_through :api
     resources "/users", Api.UserController, only: [:index, :show]
+
   end
 
 
