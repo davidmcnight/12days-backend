@@ -5,6 +5,8 @@
     </div>
   <% end %>
 
+  
+
   <%= label f, :event_name %>
   <%= text_input f, :event_name %>
   <%= error_tag f, :event_name %>
@@ -25,7 +27,7 @@
   <%= checkbox f, :all_day %>
   <%= error_tag f, :all_day %>
 
-  <%= label f, :start_date %>
+  <!-- <%= label f, :start_date %>
   <%= date_select f, :start_date, year: [prompt: ""], month: [prompt: ""], day: [prompt: ""] %>
   <%= error_tag f, :start_date %>
 
@@ -52,6 +54,8 @@
   <%= label f, :months_of_year %>
   <%= select f, :months_of_year, ["January": "january", "February": "february", "March": "march", "April": "april", "May": "may", "June": "june", "July": "july", "August": "august", "September": "september", "October": "october", "November": "november", "December": "december"], prompt: "Select Month" %>
   <%= error_tag f, :months_of_year %>
+
+  -->
 
   <div>
     <%= submit "Save" %>

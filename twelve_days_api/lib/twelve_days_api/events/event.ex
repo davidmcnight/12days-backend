@@ -18,6 +18,9 @@ defmodule TwelveDaysApi.Events.Event do
     months_of_year
   )a
 
+  @json_attrs @cast_attrs ++ [:id]
+  @derive {Jason.Encoder, only: @json_attrs}
+
   schema "events" do
     field :event_name, :string, null: false
     field :start_time, :naive_datetime

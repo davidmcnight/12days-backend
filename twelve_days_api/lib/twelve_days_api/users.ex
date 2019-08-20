@@ -7,6 +7,7 @@ defmodule TwelveDaysApi.Users do
   alias TwelveDaysApi.Repo
 
   alias TwelveDaysApi.Users.User
+  alias TwelveDaysApi.Events.Event
 
   @doc """
   Returns the list of users.
@@ -19,6 +20,15 @@ defmodule TwelveDaysApi.Users do
   """
   def list_users do
     Repo.all(User)
+  end
+
+  def list_user_events(%User{id: user_id} = user) do
+    data = Map.from_struct(user)
+    struct_list = Repo.all(from e in Event, where: e.creator_id == ^user_id)
+    events = Enum.map(struct_list, fn struct -> Map.from_struct(struct) end)
+    data = Map.put(data, :events, events)
+    IO.inspect(data)
+    data
   end
 
   @doc """
