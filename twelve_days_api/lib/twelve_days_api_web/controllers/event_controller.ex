@@ -11,14 +11,11 @@ defmodule TwelveDaysApiWeb.EventController do
   end
 
   def new(conn, _params, _assigns) do
-    current_user_id = get_session(conn, :current_user_id)
-    IO.puts current_user_id
     changeset = Events.change_event(%Event{})
     render(conn, "new.html", changeset: changeset)
   end
 
   def create(conn, %{"event" => event_params}, _assigns) do
-    # current_user_id = get_session(conn, :current_user_id)
     event_params =
       event_params
       |> Map.merge(%{"creator_id" => get_session(conn, :current_user_id)})
@@ -33,18 +30,18 @@ defmodule TwelveDaysApiWeb.EventController do
     end
   end
 
-  def show(conn, %{"id" => id}) do
+  def show(conn, %{"id" => id}, _assigns) do
     event = Events.get_event!(id)
     render(conn, "show.html", event: event)
   end
 
-  def edit(conn, %{"id" => id}) do
+  def edit(conn, %{"id" => id}, _assigns) do
     event = Events.get_event!(id)
     changeset = Events.change_event(event)
     render(conn, "edit.html", event: event, changeset: changeset)
   end
 
-  def update(conn, %{"id" => id, "event" => event_params}) do
+  def update(conn, %{"id" => id, "event" => event_params}, _assigns) do
     event = Events.get_event!(id)
 
     case Events.update_event(event, event_params) do
@@ -58,7 +55,7 @@ defmodule TwelveDaysApiWeb.EventController do
     end
   end
 
-  def delete(conn, %{"id" => id}) do
+  def delete(conn, %{"id" => id}, _assigns) do
     event = Events.get_event!(id)
     {:ok, _event} = Events.delete_event(event)
 

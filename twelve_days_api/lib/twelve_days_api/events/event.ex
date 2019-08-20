@@ -1,5 +1,5 @@
 defmodule TwelveDaysApi.Events.Event do
-  use Ecto.Schema
+  use TwelveDaysApi.Schema
   import Ecto.Changeset
 
   @cast_attrs ~w(
