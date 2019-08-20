@@ -5,8 +5,15 @@ defmodule TwelveDaysApiWeb.UserController do
   alias TwelveDaysApi.Users.User
 
   def index(conn, _params) do
-    users = Users.list_users()
-    render(conn, "index.html", users: users)
+    user_id = get_session(conn, :current_user_id)
+    if(user_id) do
+      user = Users.get_user!(user_id)
+      render(conn, "index.html", user: user)
+    else
+      conn
+      |> put_flash(:error, "Please Login.")
+      |> redirect(to: Routes.page_path(conn, :index))
+    end
   end
 
   def new(conn, _params) do
@@ -26,12 +33,6 @@ defmodule TwelveDaysApiWeb.UserController do
         render(conn, "new.html", changeset: changeset)
     end
   end
-
-  def show(conn, %{"id" => id}) do
-    user = Users.get_user!(id)
-    render(conn, "show.html", user: user)
-  end
-
 
   def edit(conn, %{"id" => id}) do
     user = Users.get_user!(id)
