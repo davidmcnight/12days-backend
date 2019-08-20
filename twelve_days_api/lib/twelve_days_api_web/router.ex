@@ -23,9 +23,7 @@ defmodule TwelveDaysApiWeb.Router do
     get "/logout", SessionController, :delete
 
     resources "/users", UserController
-    resources "/events", EventController do
-      resources "/event_occurrences", EventOccurrenceController
-    end
+    resources "/events", EventController
   end
 
   # Other scopes may use custom stacks.

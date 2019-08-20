@@ -1,8 +1,10 @@
+require IEx
 defmodule TwelveDaysApiWeb.EventController do
   use TwelveDaysApiWeb, :controller
 
   alias TwelveDaysApi.Events
   alias TwelveDaysApi.Events.Event
+  alias TwelveDaysApi.Events.EventOccurrence
 
   def index(conn, _params) do
     events = Events.list_events()
@@ -15,6 +17,7 @@ defmodule TwelveDaysApiWeb.EventController do
   end
 
   def create(conn, %{"event" => event_params}) do
+    IO.inspect(event_params)
     case Events.create_event(event_params) do
       {:ok, event} ->
         conn
