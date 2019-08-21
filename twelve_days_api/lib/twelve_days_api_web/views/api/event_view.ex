@@ -6,6 +6,7 @@ defmodule TwelveDaysApiWeb.Api.EventView do
     user =
       Map.take(user_with_events, Map.keys(user_with_events) -- [:events])
     %{data: %{
+      success: true,
       user: user,
       events: render_many(events, Api.EventView, "event.json")
     }}
@@ -17,6 +18,14 @@ defmodule TwelveDaysApiWeb.Api.EventView do
 
   def render("event.json", %{event: event}) do
     event
+  end
+
+  def render("none.json", _) do
+    %{data: %{
+      success: false,
+      user: "",
+      events: ""
+    }}
   end
 
 end
