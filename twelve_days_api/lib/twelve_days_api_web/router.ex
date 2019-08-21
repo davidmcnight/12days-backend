@@ -26,13 +26,17 @@ defmodule TwelveDaysApiWeb.Router do
     get "/registration", UserController, :new
     post "/registration", UserController, :create
     get "/calendar", UserController, :index
+
+    resources "/users", UserController, only: [:show, :edit, :update, :delete] do
+      resources "/events", EventController
+    end
   end
 
-  scope "/admin", TwelveDaysApiWeb do
+  scope "/admin", as: :admin, alias: TwelveDaysApiWeb do
     pipe_through :browser
 
-    resources "/users", UserController, only: [:index, :show, :edit, :update, :delete] do
-      resources "/events", EventController
+    resources "/users", Admin.UserController, only: [:index, :show, :edit, :update, :delete] do
+      resources "/events", Admin.EventController
     end
   end
 

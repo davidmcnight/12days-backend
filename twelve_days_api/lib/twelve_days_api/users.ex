@@ -117,6 +117,14 @@ defmodule TwelveDaysApi.Users do
     if user_id, do: !! Repo.get(User, user_id)
   end
 
+  def admin_user?(conn) do
+    user_id = Plug.Conn.get_session(conn, :current_user_id)
+    user = get_user!(user_id)
+    cond do
+      user.admin -> :ok
+      true -> {:error, :unauthorized}
+    end
+  end
 
   def get_user_by_email!(email) do
     from(u in User, where: u.email == ^email)
@@ -137,9 +145,5 @@ defmodule TwelveDaysApi.Users do
       true->{:error, :not_found}
     end
 #    with{:ok, %{User{} = user} }
-
-
   end
-
-
 end

@@ -10,6 +10,7 @@ defmodule TwelveDaysApi.Users.User do
     latest_activity
     password
     password_confirmation
+    admin
   )a
 
   # @filtered_attrs
@@ -17,6 +18,7 @@ defmodule TwelveDaysApi.Users.User do
     password
     password_confirmation
     password_hash
+    admin
   )a
 
   @json_attrs @cast_attrs ++ [:id]

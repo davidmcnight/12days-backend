@@ -1,4 +1,4 @@
-<h1>Twelve Days of Forgetfulness</h1>
+<h1>Show User</h1>
 
 <ul>
 
@@ -17,12 +17,15 @@
     <%= @user.last_name %>
   </li>
 
-    <li>
+  <li>
     <strong>ID:</strong>
     <%= @user.id %>
   </li>
 
-</ul>
+  <li>
+    <strong>Admin:</strong>
+    <%= @user.admin %>
+  </li>
 
-<span><%= link "Edit", to: Routes.user_path(@conn, :edit, @user) %></span>
+</ul>
 
