@@ -24,8 +24,16 @@ defmodule TwelveDaysApiWeb.Router do
     get "/logout", SessionController, :delete
     post "/auth", SessionController, :create
     get "/registration", UserController, :new
+    post "/registration", UserController, :create
     get "/calendar", UserController, :index
-    resources "/events", EventController
+  end
+
+  scope "/admin", TwelveDaysApiWeb do
+    pipe_through :browser
+
+    resources "/users", UserController, only: [:index, :show, :edit, :update, :delete] do
+      resources "/events", EventController
+    end
   end
 
 
@@ -36,5 +44,4 @@ defmodule TwelveDaysApiWeb.Router do
     end
     resources "/events", Api.EventController, only: [:index]
   end
-
 end

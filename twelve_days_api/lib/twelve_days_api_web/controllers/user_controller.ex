@@ -3,6 +3,8 @@ defmodule TwelveDaysApiWeb.UserController do
 
   alias TwelveDaysApi.Users
   alias TwelveDaysApi.Users.User
+  alias TwelveDaysApi.Email
+  alias TwelveDaysApi.Mailer
 
   def index(conn, _params) do
     user_id = get_session(conn, :current_user_id)
@@ -24,6 +26,8 @@ defmodule TwelveDaysApiWeb.UserController do
   def create(conn, %{"user" => user_params}) do
     case Users.create_user(user_params) do
       {:ok, user} ->
+        Email.welcome_text_email(user.email)
+        |> Mailer.deliver_now(user.email)
         conn
         |> put_session(:current_user_id, user.id)
         |> put_session(:admin, user.admin)

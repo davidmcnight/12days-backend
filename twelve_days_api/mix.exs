@@ -20,7 +20,7 @@ defmodule TwelveDaysApi.MixProject do
   def application do
     [
       mod: {TwelveDaysApi.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :bamboo]
     ]
   end
 
@@ -43,7 +43,9 @@ defmodule TwelveDaysApi.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:bcrypt_elixir, "~> 2.0"}
+      {:bcrypt_elixir, "~> 2.0"},
+      {:bamboo, "~> 1.3.0"},
+      {:bamboo_smtp, "~> 1.7.0"}
     ]
   end
 

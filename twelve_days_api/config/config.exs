@@ -17,6 +17,11 @@ config :twelve_days_api, TwelveDaysApiWeb.Endpoint,
   render_errors: [view: TwelveDaysApiWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: TwelveDaysApi.PubSub, adapter: Phoenix.PubSub.PG2]
 
+# Configures the mailer
+config :twelve_days_api, TwelveDaysApi.Mailer,
+  adapter: Bamboo.SendGridAdapter,
+  api_key: "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"
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
