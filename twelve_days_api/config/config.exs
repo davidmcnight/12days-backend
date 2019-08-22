@@ -20,7 +20,7 @@ config :twelve_days_api, TwelveDaysApiWeb.Endpoint,
 # Configures the mailer
 config :twelve_days_api, TwelveDaysApi.Mailer,
   adapter: Bamboo.SendGridAdapter,
-  api_key: "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"
+  api_key: System.get_env("SENDGRID_API_KEY")
 
 # Configures Elixir's Logger
 config :logger, :console,
